@@ -1,23 +1,34 @@
 <template>
   <ion-page>
-    <ion-header>
+    <ion-header :translucent="true">
       <ion-toolbar>
-        <ion-title>Tab 1</ion-title>
+        <ion-title>
+          Pais
+        </ion-title>
       </ion-toolbar>
-    </ion-header>
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Tab 1</ion-title>
-        </ion-toolbar>
-      </ion-header>
+    </ion-header>  
+    <ion-content>       
+      <div id="login-container">  
+        <div id="login-form">
+          <InputComponent id="id" name="id" type="hidden"/>
+          <InputComponent type="number" id="Documento" name="Documento" label="codigo dane: " />
+          <InputComponent id="nombre" name="nombre" label="Nombre: " />
+          <InputComponent id="pais" name="pais" label="pais: " />            
+        </div>
 
-      <ExploreContainer name="Tab 1 page" />
+        <div> 
+           <!--Traer el componente de los botones de la crud  -->
+          <CrudButtonComponent />
+        </div>          
+      </div>
     </ion-content>
   </ion-page>
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-import ExploreContainer from '@/components/ExploreContainer.vue';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import InputComponent from '@/components/InputComponents.vue';
+import CrudButtonComponent from '@/components/CrudButtonComponent.vue';
 </script>
+
+<style scoped src="../theme/container.css"></style>
